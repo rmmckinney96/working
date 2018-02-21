@@ -1,0 +1,32 @@
+
+<document>
+    <category>lp</category>
+    <solver>CPLEX</solver>
+    <inputMethod>AMPL</inputMethod>
+    <email>agundimeda@gmail.com</email>
+  
+ 
+  <model><![CDATA[
+    
+
+]]></model>
+
+   <data><![CDATA[
+
+    
+]]></data>
+
+   <commands><![CDATA[
+   
+
+]]></commands>
+
+
+
+    <comments><![CDATA[
+    ]]></comments>
+
+ </document>
+
+
+

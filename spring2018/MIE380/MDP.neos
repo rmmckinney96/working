@@ -1,0 +1,56 @@
+
+<document>
+    <category>milp</category>
+    <solver>CPLEX</solver>
+    <inputMethod>AMPL</inputMethod>
+    <email> agundimeda@gmail.com</email>
+    <model><![CDATA[
+reset;
+
+var y01;
+var y11;
+var y13;
+var y21;
+var y22;
+var y23;
+var y33;
+
+minimize cost:
+       0*y01 + 1000*y11 + 6000*y13 + 3000*y21 + 4000*y22 + 6000*y23 + 6000*y33;
+
+subject to summation: y01 + y11 + y13 + y21 + y22 + y23 + y33 == 1;
+
+subject to cons1: y01 - (y13 + y23 + y33) == 0;
+subject to cons2: y11 + y13 - ((7/8)*y01 + (3/4)*y11 + y22) == 0;
+subject to cons3: y21 + y22 + y23 - ((1/16)*y01 + (1/8)*y11 + (1/2)*y21) == 0;
+subject to cons4: y33 - ((1/16)*y01 + (1/8)*y11 + (1/2)*y21) == 0;
+
+subject to nonneg1: y01 >= 0;
+subject to nonneg2: y11 >= 0;
+subject to nonneg3: y13 >= 0;
+subject to nonneg4: y21 >= 0;
+subject to nonneg5: y23 >= 0;
+subject to nonneg6: y23 >= 0;
+subject to nonneg7: y33 >= 0;
+
+
+
+
+    ]]></model>
+
+    <data><![CDATA[
+    ]]></data>
+
+    <commands><![CDATA[
+	solve;
+	display cost;
+	display y01,y11,y13,y21,y22,y23,y33;
+    ]]></commands>
+
+    <comments><![CDATA[
+    ]]></comments>
+
+    </document>
+
+
+
