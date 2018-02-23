@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cd /home/avi/Code/working/
+
+git pull origin master
+git add .
+git commit 
+git push
+
+
